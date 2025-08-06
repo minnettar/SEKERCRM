@@ -82,10 +82,9 @@ FIYAT_TEKLIFI_ID = '1TNjwx-xhmlxNRI3ggCJA7jaCAu9Lt_65'
 @st.cache_resource
 def get_drive():
     gauth = GoogleAuth()
-    # settings.yaml ile:
-    # gauth = GoogleAuth(settings_file="settings.yaml")
-    gauth.ServiceAuth()
+    gauth.LocalWebserverAuth()
     return GoogleDrive(gauth)
+drive = get_drive()
 
 if not os.path.exists(LOGO_LOCAL_NAME):
     logo_file = drive.CreateFile({'id': LOGO_FILE_ID})
@@ -1639,3 +1638,6 @@ elif menu == "Medya Çekmecesi":
         st.info("Kalite sertifikalarını ve ilgili dokümanları bu klasörden inceleyebilir ve indirebilirsiniz.")
 
     st.warning("Not: Klasörlerin paylaşım ayarlarının 'Bağlantıya sahip olan herkes görüntüleyebilir' olduğundan emin olun.")
+
+
+
