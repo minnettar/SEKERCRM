@@ -1,4 +1,6 @@
-streamlit
-pandas
-numpy
-pydrive2
+streamlit>=1.31.0
+pandas>=2.2.0
+numpy>=1.26.0
+pydrive2>=1.19.0
+openpyxl>=3.1.0
+requests>=2.31.0
